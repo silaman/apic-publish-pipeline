@@ -52,7 +52,7 @@ def orchestrate():
         print(INFO + "APIs to test:",var_api_basepath_dict)
         var_final_api_test_result_dict = test_apis(var_api_basepath_dict,
                                                     environment_config["APIC_GATEWAY_URL"] + "/" + \
-                                                    os.environ["PROV_ORG_NAME"] + "/" + \
+                                                    os.environ["PROV_ORG_TITLE"].strip().replace(" ","-").lower() + "/" + \
                                                     os.environ["PROV_ORG_CATALOG_NAME"])
         
         print(INFO + "api_test_audit:",var_final_api_test_result_dict)
